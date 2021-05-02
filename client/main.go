@@ -16,9 +16,9 @@ var mySigningKey = []byte(stringKey)
 func homePage(w http.ResponseWriter, r *http.Request) {
 	validToken, err := GenerateJWT()
 	if err != nil {
-		fmt.Fprintf(w, err.Error())
+		fmt.Print(w, err.Error())
 	}
-	fmt.Fprintf(w, validToken)
+	fmt.Print(w, validToken)
 }
 
 func handleRequests() {
